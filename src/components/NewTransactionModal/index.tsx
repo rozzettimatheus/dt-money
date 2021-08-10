@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 
 import { CloseIcon, IncomeIcon, OutcomeIcon } from '../../assets'
 import { useTransactions } from '../../hooks/useTransactions'
+import { TransactionType } from '../../models/transaction'
 import { Container, TransactionTypeContainer, RadioBox } from './styles'
 
 interface NewTransactionModalProps {
@@ -18,7 +19,7 @@ export function NewTransactionModal({
 
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
-  const [type, setType] = useState('deposit')
+  const [type, setType] = useState<TransactionType>('deposit')
   const [category, setCategory] = useState('')
 
   async function handleCreateNewTransaction(event: FormEvent) {

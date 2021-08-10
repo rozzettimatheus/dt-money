@@ -5,23 +5,16 @@ import {
   useEffect,
   useState,
 } from 'react'
+
 import { api } from '../services/api'
+import { Transaction } from '../models/transaction'
 
 interface TransactionsContextData {
   transactions: Transaction[]
   createTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
-interface Transaction {
-  id: number
-  title: string
-  amount: number
-  type: string
-  category: string
-  createdAt: string
-}
-
-type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>
+type TransactionInput = Omit<Transaction, 'id' | 'created_at'>
 
 interface TransactionsProviderProps {
   children: ReactNode
