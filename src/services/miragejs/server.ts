@@ -43,7 +43,7 @@ export function makeServer() {
         return this.schema.all('transaction')
       })
 
-      // retorna um string em request.requestBody
+      // request.requestBody [string]
       this.post('/transactions', (schema, request) => {
         const data = JSON.parse(request.requestBody)
 

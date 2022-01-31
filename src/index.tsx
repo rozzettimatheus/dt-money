@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import {  makeServer } from './services/miragejs/server'
+import { makeServer } from './services/miragejs/server'
 import { App } from './App'
 
 if (process.env.NODE_ENV === 'development') {

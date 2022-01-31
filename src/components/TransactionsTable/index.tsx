@@ -1,16 +1,13 @@
 import { useTransactions } from '../../hooks/useTransactions'
-import { api } from '../../services/api'
 import { Container, Table } from './styles'
 
 export function TransactionsTable() {
   const { transactions } = useTransactions()
 
-  console.log(transactions)
-
   return (
     <Container>
       {!transactions.length ? (
-        <div>loading...</div>
+        <div>Carregando...</div>
       ) : (
         <Table>
           <thead>
